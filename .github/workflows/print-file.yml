@@ -1,0 +1,19 @@
+name: Print File Content
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-content:
+    runs-on: self-hosted
+
+    steps:
+      # Step 1: Checkout repo code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Display file contents in log
+      - name: Print index.html content
+        run: cat index.html
